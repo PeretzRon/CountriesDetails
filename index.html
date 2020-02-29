@@ -4,9 +4,41 @@
     <meta charset="UTF-8">
     <title>Countries Info</title>
     <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="vendors/css/Grid.css">
+    <link rel="stylesheet" href="vendors/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 </head>
 <body>
+<header>
+    <div class="row">
+        <div class="hero-text-box">
+            <h1>Countries Details</h1>
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <a class="btn btn-full" id="random_country" href="#">Get random country</a>
+                    <a class="btn btn-ghost" id="delete_all_data" href="#">Delete All</a>
+                </div>
+                <div class="col span-1-of-2">
+                    <div class="search_dropdown_list">
+                        <div class="col span-1-of-2 ">
+                            <form autocomplete="off" action="/action_page.php">
+                                <div class="autocomplete" style="width:300px;">
+                                    <input id="myInput" type="text" name="myCountry" placeholder="Search country...">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col span-1-of-2">
+                            <div class="btn_submit_search">
+                                <a class="btn btn-ghost" id="get_country" href="#">GO!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 <script src="resources/js/app.js"></script>
 </body>

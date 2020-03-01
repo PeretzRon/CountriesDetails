@@ -1,4 +1,5 @@
 import Country from "./Country.js";
+import {autocomplete} from "./autoCompleteSearchBar.js"
 
 // get all country names for the search bar to autoComplete data and for random country
 const getAllCountriesNames = async () => {
@@ -24,11 +25,12 @@ const renderView = (countryDetails) => {
        `;
 
     selectedCountries.push(markup); // insert to the global array
-    const selectedCountriesFinal =  classifyLastFinalBoxAndFixRow(selectedCountries);
+    const selectedCountriesFinal = classifyLastFinalBoxAndFixRow(selectedCountries);
     document.querySelector('.country-boxes').innerHTML = '';
     document.querySelector('.country-boxes').innerHTML = selectedCountriesFinal.join('');
 };
 
+// insert a new row after 4 country + the last country box get final class for animation
 const classifyLastFinalBoxAndFixRow = (selectedCountries) => {
     let currentCountry = '';
     const selectedCountriesAfterClassify = [];
@@ -75,11 +77,21 @@ document.getElementById('delete_all_data').addEventListener('click', el => {
 });
 
 
+document.getElementById('get_country').addEventListener('click', el => {
+    const val = document.getElementById("myInput").value;
+    const countryFromSearch = new Country(val);
+    countryFromSearch.getCountry().then(value => {
+        renderView(countryFromSearch);
+    });
+});
+
+
 // Main //
 let countries = [];
 let selectedCountries = [];
 getAllCountriesNames().then(value => {
     countries = value;
+    autocomplete(document.getElementById("myInput"), countries);
 }).catch(reason => {
     document.getElementById('myInput').placeholder = 'Unable load countries';
 });

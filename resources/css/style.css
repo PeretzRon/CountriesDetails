@@ -22,7 +22,11 @@ html {
     background-attachment: fixed;
 }
 
-row {
+li {
+    list-style-type: none;
+}
+
+.row {
     max-width: 1140px;
     margin: 0 auto; /* center the row*/
 }
@@ -86,4 +90,57 @@ h1 {
 .btn-ghost:active {
     border: 1px solid #cf6d17;
     color: #fff;
+}
+
+
+/*********************
+*     Country box    *
+**********************/
+.country_details_box {
+    width: 100%;
+    border: 1px solid #e67e22;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: black;
+    border-radius: 2%;
+    font-size: 90%;
+    box-shadow: 0 2px 2px #c34a00; /* x-axis y-axis blur color*/
+}
+
+.country_details_box img {
+    display: block;
+    border: 1px solid #000;
+    background-repeat: no-repeat;
+    object-fit: fill;
+    border-radius: 10%;
+    text-align: center;
+    margin: 0 auto;
+    min-width: 100px;
+    min-height: 50px;
+    max-height: 50px;
+    max-width: 100px;
+}
+
+.small-icon {
+    display: inline-block;
+    width: 30px;
+    margin: 5px 5px;
+    color: #e67e22;
+    font-size: 120%;
+    text-align: center;
+}
+
+.final {
+    opacity: 0;
+    animation: fadeIn 1.7s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
 }

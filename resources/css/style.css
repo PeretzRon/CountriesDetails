@@ -161,8 +161,7 @@ form{
 
 .btn_submit_search{
     display: inline-block;
-    float: left;
-    margin-left: 30px !important;
+    text-align: left;
 }
 
 /*the container must be positioned relative:*/
